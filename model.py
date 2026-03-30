@@ -5,7 +5,7 @@ from sklearn.metrics import accuracy_score
 import joblib
 
 #load data
-data = pd.read_csv('/kaggle/input/datasets/brendan45774/test-file/tested.csv')
+data = pd.read_csv('train.csv')
 
 #clean & map data
 data.drop('Cabin',axis =1)
@@ -13,6 +13,7 @@ data['Age'] = data['Age'].fillna(data["Age"].mean())
 data["Sex"] = data['Sex'].map({'male': 0, 'female': 1})
 
 #feature Selection
+
 x = data[['Age','Sex','SibSp','Parch','Pclass']]
 y = data['Survived']
 
